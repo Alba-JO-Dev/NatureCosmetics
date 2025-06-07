@@ -1,0 +1,238 @@
+body {
+    background-image: url("../img/PRIMERO.png");
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    color: #ffffff;
+    transition: background-image 1s ease-in-out;
+}
+
+
+.titulo {
+    font-size: xx-large;
+}
+
+.ima {
+    height: 60px;
+    filter: drop-shadow(0 0 1rem rgb(0, 0, 0));
+}
+
+button {
+    position: relative;
+    margin: 15px;
+    transition: all 120ms;
+    border: transparent;
+    background-color: transparent;
+    height: 80px;
+    width: auto;
+    color: #f4f4f4;
+    cursor: pointer;
+}
+
+#login {
+    transition: all 120ms;
+    border: 2px solid #ffffff;
+    border-radius: 7px;
+    background-color: transparent;
+    color: #ffffff;
+    height: auto;
+    padding: 7.5px;
+    box-shadow: 0px 0px 15px 5px rgba(255, 255, 255, 0.5);
+}
+
+#login:hover {
+    transition: all 120ms;
+    background-color: #ffffff;
+    color: #efb810;
+    box-shadow: 0px 0px 15px 10px rgba(255, 255, 255, 0.5);
+}
+
+button:hover, .ima:hover {
+    transition: all 120ms;
+    transform: scale(115%);
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.img-buttons img {
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+}
+
+#back {
+    transition: all 120ms;
+    position: absolute;
+    top: 50%;
+    left: 2.5%;
+    transform: translate(-50%, -50%);
+}
+
+#next {
+    transition: all 120ms;
+    position: absolute;
+    top: 50%;
+    left: 97.5%;
+    transform: translate(-50%, -50%);
+}
+
+header {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    width: 105%;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    background-color: #efb810;
+    gap: 20px;
+    box-shadow: 0 25px 25px rgba(239,184,16,255); /* Sombra para crear efecto de transición */
+    z-index: 10; /* Para asegurar que el header quede sobre el contenido */
+}
+
+.login {
+    padding: 20px 30px;
+    border-radius: 12px;
+    position: absolute;
+    background-color: rgba(239,184,16,0.65);
+    box-shadow: 0 0px 90px 20px rgba(239,184,16,1);
+    backdrop-filter: blur(12px);
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    color: #ffffff;
+    font-size: 14px;
+    left: 0;
+}
+
+input {
+    transition: all 120ms;
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 2px solid #ffffff;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    background-color: transparent;
+    color: #ffffff;
+}
+
+input:hover {
+    transition: all 120ms;
+    background-color: #ffffff;
+    color: #efb810;
+}
+
+input:hover:focus{
+    transition: all 120ms;
+    border-color: #ffffff;
+    box-shadow: 0 0 20px rgb(255, 255, 255);
+}
+
+input::placeholder {
+    color: #ffffff;
+}
+
+input:focus {
+    transition: all 120ms;
+    outline: none;
+    border-color: #ffffff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.892);
+}
+
+#loginSubmit {
+    border: 2px solid #ffffff;
+    height: auto;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+#loginSubmit:hover {
+    background-color: #ffffff;
+    color: #efb810;
+}
+
+.password-container img {
+    cursor: pointer;
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0; 
+    transition: opacity 0.2s;
+}
+
+.password-container img:hover {
+    opacity: 0.7;
+}
+
+
+.password-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+}
+
+.nosotros {
+    padding: 20px 30px;
+    border-radius: 12px;
+    position: absolute;
+    background-color: rgba(239,184,16,0.65);
+    box-shadow: 0 0px 90px 20px rgba(239,184,16,1);
+    backdrop-filter: blur(12px);
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    z-index: 9;
+}
+
+.nosotros button {
+    background-color: transparent;
+    color: #ffffff;
+    height: 60px;
+}
+
+.nosotros img {
+    height: 50px;
+    width: 50px;
+}
+
+#add {
+    border: solid 2px #ffffff;
+    border-radius: 5px;
+    width: 90%;
+    height: auto;
+    padding: 10px;
+    transition: all 140ms;
+}
+
+#add:hover {
+    background-color: #ffffff;
+    color: #efb810;
+    box-shadow: 0px 0px 15px 10px rgba(255, 255, 255, 0.5);
+    transition: all 140ms;
+}
+
+
+.cosmeticos {
+    padding: 20px 30px;
+    border-radius: 12px;
+    position: absolute;
+    background-color: rgba(239,184,16,0.65);
+    box-shadow: 0 0px 90px 20px rgba(239,184,16,1);
+    backdrop-filter: blur(12px);
+    transform: translate(-50%, -50%);
+    top: 130%;
+    left: 50%;
+    height: auto;
+}

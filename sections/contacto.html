@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" rel="stylesheet" href="../style.css">
+    <title>Contactos - Nature Cosmetics</title>
+</head>
+<style>
+    body {
+    background-image: url("../img/primero.png");
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    color: #ffffff;
+    transition: background-image 1s ease-in-out;
+}
+</style>
+<body>
+    <header>
+        <a href="../index.html"><img class="ima" src="../img/5A.png" alt="Logo Nature Cosmetics"></a>
+        <a href="nosotros.html"><button><strong>Nosotros</strong></button></a>
+        <a href="contacto.html"><button><strong>Contacto</strong></button></a>
+        <a href="tienda.html"><button><strong>Tienda</strong></button></a>
+    </header>
+    <div class="nosotros">
+        <h1>Contactos</h1>
+        <button id="telefono"><img src="../img/7.png" alt="Telefóno"></button>
+        <button id="whatsapp"><img src="../img/8.png" alt="Whatsapp"></button>
+        <button id="email"><img src="../img/9.png" alt="Email"></button>
+        <button id="direccion"><img src="../img/10.png" alt="Dirección"></button>
+    </div>
+
+    <script>
+        document.getElementById('telefono').addEventListener('click', function() {
+            window.location.href = 'tel:+573216309645';
+        });
+
+        document.getElementById('whatsapp').addEventListener('click', function() {
+            window.location.href = 'https://wa.me/+573216309645';
+        });
+
+        document.getElementById('email').addEventListener('click', function() {
+            window.location.href = 'https://mail.google.com/mail/u/6/#inbox?compose=CllgCJvqsgTjMPkgkVZcJlcpDxDlwhMgWFnPrVnmlBcnXkBWNgpbhpsRZHfcXBvRmSqpnPxPcQV';
+        });
+
+        document.getElementById('direccion').addEventListener('click', function() {
+            window.open('https://www.google.com/maps/place/COLEGIO+BILING%C3%9CE+TESLA+-+T.B.S+,Jamund%C3%AE/@3.2323944,-76.5661118,17z/data=!3m1!4b1!4m6!3m5!1s0x8e309b51d7afa14f:0x4f327b014849608a!8m2!3d3.232389!4d-76.5635369!16s%2Fg%2F11gh99w946?entry=ttu&g_ep=EgoyMDI1MDEyMC4wIKXMDSoASAFQAw%3D%3D'); // Reemplaza con la URL de Google Maps real
+        });
+    </script>
+</body>
+</html>

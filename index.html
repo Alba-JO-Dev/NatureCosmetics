@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" rel="stylesheet" href="style.css">
+    <title>Nature Cosmetics</title>
+    <style>
+        body {
+            transition: background-image 1s ease-in-out, background-color 1s ease-in-out, opacity 0.5s ease-in-out;
+            opacity: 1;
+        }
+        .fade-out {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img class="ima" src="img/5A.png" alt="Logo Nature Cosmetics"></a>
+        <a href="sections/nosotros.html"><button><strong>Nosotros</strong></button></a>
+        <a href="sections/contacto.html"><button><strong>Contacto</strong></button></a>
+        <a href="sections/tienda.html"><button><strong>Tienda</strong></button></a>
+    </header>
+
+    <div id="homeID" class="img-buttons">
+        <a id="back"><img src="img/6.png" alt="Anterior"></a>
+        <a id="next"><img src="img/5.png" alt="Siguiente"></a>
+    </div>
+
+    <div id="loginID" class="login" style="display: none;">
+        <form id="form-login" class="hidden" action="login.php" method="POST">
+            <h1>Inicia Sesión</h1>
+            <label for="login-user">Usuario:</label>
+            <input type="text" id="login-user" name="login-user" required>
+            <label for="login-password">Contraseña:</label>
+            <div class="password-container">
+                <input type="password" id="login-password" name="login-password" required>
+                <img 
+                    src="img/show-password.png" 
+                    alt="Mostrar contraseña"
+                    class="toggle-password"
+                    data-target="login-password"
+                >
+            </div>
+            <button id="loginSubmit" type="submit">Iniciar Sesión</button>
+        </form>
+    </div>
+
+    <script>
+
+        const togglePasswordImages = document.querySelectorAll('.toggle-password');
+        togglePasswordImages.forEach(image => {
+            image.addEventListener('click', () => {
+                const targetId = image.getAttribute('data-target');
+                const passwordInput = document.getElementById(targetId);
+                if (passwordInput) {
+                    if (passwordInput.type === 'password') {
+                        passwordInput.type = 'text';
+                        image.src = 'img/hide-password.png';
+                        image.alt = 'Ocultar contraseña';
+                    } else {
+                        passwordInput.type = 'password';
+                        image.src = 'img/show-password.png';
+                        image.alt = 'Mostrar contraseña';
+                    }
+                } else {
+                    console.error(`Elemento con id "${targetId}" no encontrado.`);
+                }
+            });
+        });
+
+        const images = [
+            'img/PRIMERO.png',
+            'img/QUINTO.jpg',
+            'img/SEGUNDO.png',
+            'img/SEXTO.jpg',
+            'img/TERCERO.png'
+        ];
+
+        let currentIndex = 0;
+        let intervalId;
+        let isBackgroundActive = true;
+
+        function changeBackground() {
+            document.body.classList.add('fade-out');
+            setTimeout(() => {
+                const imageUrl = images[currentIndex];
+                document.body.style.backgroundImage = `url(${imageUrl})`;
+                document.body.style.backgroundColor = '';
+                document.body.classList.remove('fade-out');
+            }, 500);
+        }
+
+        function nextImage() {
+            if (!isBackgroundActive) return;
+            currentIndex = (currentIndex + 1) % images.length;
+            changeBackground();
+        }
+
+        function prevImage() {
+            if (!isBackgroundActive) return;
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            changeBackground();
+        }
+
+        function startInterval() {
+            clearInterval(intervalId);
+            intervalId = setInterval(nextImage, 5000);
+        }
+
+        function stopBackgroundChange() {
+            clearInterval(intervalId);
+            document.body.style.backgroundImage = 'img/PRIMERO.png';
+            document.body.style.backgroundColor = '#f3f3f3';
+            isBackgroundActive = false;
+        }
+
+        function loginBackground() {
+            stopBackgroundChange();
+        }
+
+        function nosotrosBackground() {
+            stopBackgroundChange();
+        }
+
+        function showSection(sectionId) {
+            const sections = ['loginID'];
+            sections.forEach(id => {
+                document.getElementById(id).style.display = id === sectionId ? 'block' : 'none';
+            });
+
+            if (sectionId === 'homeID') {
+                currentIndex = 0;
+                isBackgroundActive = true;
+                changeBackground();
+                startInterval();
+            } else if (sectionId === 'loginID') {
+                loginBackground();
+            }
+        }
+
+        document.getElementById('next')?.addEventListener('click', nextImage);
+        document.getElementById('back')?.addEventListener('click', prevImage);
+
+        changeBackground();
+        startInterval();
+    </script>
+</body>
+</html>

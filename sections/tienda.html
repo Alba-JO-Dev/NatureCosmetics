@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>¿Qué Vendemos? - Nature Cosmetics</title>
+</head>
+<style>
+    body {
+        background-image: url("../img/primero.png");
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        text-align: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        color: #ffffff;
+        transition: background-image 1s ease-in-out;
+    }
+    .producto {
+        border: 1px solid #fff;
+        padding: 20px;
+        margin: 20px auto;
+        width: 80%;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+    }
+    .producto img {
+        max-width: 200px;
+        border-radius: 10px;
+    }
+</style>
+<body>
+    <header>
+        <a href="../index.html"><img class="ima" src="../img/5A.png" alt="Logo Nature Cosmetics"></a>
+        <a href="nosotros.html"><button><strong>Nosotros</strong></button></a>
+        <a href="contacto.html"><button><strong>Contacto</strong></button></a>
+        <a href="tienda.html"><button><strong>Tienda</strong></button></a>
+    </header>
+
+    <div class="cosmeticos">
+        <h1>¿Qué Vendemos?</h1>
+        <p>En <strong>Nature Cosmetics</strong>, ofrecemos una amplia gama de productos de belleza y cuidado personal 100% naturales. Nuestros productos están diseñados para cuidar tu piel y cabello de manera efectiva y saludable, sin comprometer tu bienestar ni el del medio ambiente.</p>
+        <p>Nuestra línea incluye:</p>
+
+        <div class="productos">
+            <!-- Aquí se insertarán los productos dinámicamente -->
+        </div>
+
+        <p>Cada producto está elaborado con ingredientes seleccionados cuidadosamente, garantizando calidad y efectividad. Además, todos nuestros productos son libres de crueldad animal y respetuosos con el medio ambiente.</p>
+    </div>
+
+    <script>
+        fetch('../data.json')  // Asegúrate de que data.json está en el mismo nivel que style.css
+        .then(response => response.json())
+        .then(data => {
+            const contenedor = document.querySelector(".productos");
+
+            data.forEach(item => {
+                const div = document.createElement("div");
+                div.classList.add("producto");
+
+                div.innerHTML = `
+                    <h2>${item.nombre}</h2>
+                    <img src="../img/${item.imagen.archivo}" alt="${item.nombre}">
+                    <p><strong>Precio:</strong> $${item.precio}</p>
+                    <p><strong>Descripción:</strong> ${item.descripcion}</p>
+                `;
+
+                contenedor.appendChild(div);
+            });
+        })
+        .catch(err => console.error("Error al cargar los productos:", err));
+    </script>
+</body>
+</html>

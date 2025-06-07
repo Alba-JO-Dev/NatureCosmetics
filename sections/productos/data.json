@@ -1,0 +1,38 @@
+[
+  {
+    "nombre": "Shampoo",
+    "imagen": {
+      "archivo": "shampoo.jpg",
+      "tipo": "image/jpeg"
+    },
+    "precio": 25000,
+    "descripcion": "Shampoo natural enriquecido con aceites esenciales que fortalece y revitaliza el cabello desde la raíz."
+  },
+  {
+    "nombre": "Tratamiento",
+    "imagen": {
+      "archivo": "tratamiento.jpg",
+      "tipo": "image/jpeg"
+    },
+    "precio": 20000,
+    "descripcion": "Tratamiento profundo para reparar el cabello dañado, dejándolo suave, brillante y manejable."
+  },
+  {
+    "nombre": "Óvulos x3",
+    "imagen": {
+      "archivo": "ovulos.jpg",
+      "tipo": "image/jpeg"
+    },
+    "precio": 25000,
+    "descripcion": "Óvulos naturales para cuidado íntimo femenino, con ingredientes calmantes y restauradores. Pack de 3 unidades."
+  },
+  {
+    "nombre": "Serum",
+    "imagen": {
+      "archivo": "serum.jpg",
+      "tipo": "image/jpeg"
+    },
+    "precio": 20000,
+    "descripcion": "Sérum facial con ingredientes naturales que hidratan, reducen líneas de expresión y mejoran la luminosidad de la piel."
+  }
+]

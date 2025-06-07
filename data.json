@@ -1,0 +1,34 @@
+[
+    {
+        "nombre": "Champú Natural Revitalizante",
+        "precio": 25000,
+        "descripcion": "Champú suave con ingredientes naturales como romero y aloe vera. Fortalece el cabello y estimula el cuero cabelludo.",
+        "imagen": {
+            "archivo": "champu_natural.png"
+        }
+    },
+    {
+        "nombre": "Sérum Facial Iluminador",
+        "precio": 20000,
+        "descripcion": "Sérum con vitamina C y ácido hialurónico que aporta luminosidad y reduce líneas de expresión.",
+        "imagen": {
+            "archivo": "serum_facial.png"
+        }
+    },
+    {
+        "nombre": "Tratamiento Capilar Reparadora",
+        "precio": 20000,
+        "descripcion": "Tratamiento intensivo con aceite de argán y karité para reparar el cabello seco o dañado.",
+        "imagen": {
+            "archivo": "mascarilla_capilar.png"
+        }
+    },
+    {
+        "nombre": "Natural Ovules x3",
+        "precio": 25000,
+        "descripcion": "Óvulos íntimos formulados con manzanilla y caléndula, ideales para aliviar molestias y equilibrar el pH.",
+        "imagen": {
+            "archivo": "ovulos_intimos.png"
+        }
+    }
+]
