@@ -2,7 +2,7 @@
     {
         "nombre": "Champú Natural Revitalizante",
         "precio": 28000,
-        "descripcion": "Champú suave con ingredientes naturales como romero y aloe vera. Fortalece el cabello y estimula el cuero cabelludo.",
+        "descripcion": "Champú suave con gengibre, romero, cola de caballo, canela, clavos, vitamina E, extracto de aceite esencial de coco, aceite de jojoba y aceite de semilla de uva. Fortalece el cabello, estimula el cuero cabelludo y aporta brillo.",
         "imagen": {
             "archivo": "champu_natural.png"
         }
@@ -10,15 +10,15 @@
     {
         "nombre": "Sérum Facial Iluminador",
         "precio": 20000,
-        "descripcion": "Sérum con vitamina C y ácido hialurónico que aporta luminosidad y reduce líneas de expresión.",
+        "descripcion": "Sérum con ácido hialurónico, aceite de almendras, aceite de coco, aceite de jojoba, aceite de semilla de uva y vitamina E. Hidrata profundamente, reduce líneas de expresión y deja la piel luminosa.",
         "imagen": {
             "archivo": "serum_facial.png"
         }
     },
     {
-        "nombre": "Tratamiento de Cremiento y Regeneración Capilar",
+        "nombre": "Tratamiento de Crecimiento y Regeneración Capilar",
         "precio": 25000,
-        "descripcion": "Tratamiento intensivo con aceite de argán y karité para reparar el cabello seco o dañado.",
+        "descripcion": "Tratamiento intensivo con semilla de aguacate, gengibre, almidón de maíz, almidón de arroz, vitamina E y extracto de aceite de coco. Nutre, fortalece y repara el cabello dañado.",
         "imagen": {
             "archivo": "mascarilla_capilar.png"
         }
@@ -26,7 +26,7 @@
     {
         "nombre": "Natural Ovules x3",
         "precio": 25000,
-        "descripcion": "Óvulos íntimos formulados con manzanilla y caléndula, ideales para aliviar molestias y equilibrar el pH.",
+        "descripcion": "Óvulos íntimos naturales con aceite de coco, orégano, piedralumbre y ajo. Ayudan a equilibrar el pH, eliminar bacterias y mantener la salud íntima.",
         "imagen": {
             "archivo": "ovulos_intimos.png"
         }
