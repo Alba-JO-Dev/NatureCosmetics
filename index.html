@@ -59,8 +59,22 @@
     </header>
 
     <div id="homeID" class="img-buttons">
-        <a id="back"><img src="img/6.png" alt="Anterior"></a>
-        <a id="next"><img src="img/5.png" alt="Siguiente"></a>
+        <a id="back">
+            <picture>
+                <!-- Imagen para pantallas menores a 768px -->
+                <source media="(max-width: 767px)" srcset="img/4.png">
+                <!-- Imagen por defecto -->
+                <img class="ima" src="img/6.png" alt="Anterior">
+            </picture>
+        </a>
+        <a id="next">
+            <picture>
+                <!-- Imagen para pantallas menores a 768px -->
+                <source media="(max-width: 767px)" srcset="img/3.png">
+                <!-- Imagen por defecto -->
+                <img class="ima" src="img/5.png" alt="Siguiente">
+            </picture>
+        </a>
     </div>
 
 <script>
