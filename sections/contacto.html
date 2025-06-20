@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <link rel="icon" type="image/png" href="../img/NatureCosmeticsICo.png">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,7 +23,14 @@
 </style>
 <body>
     <header>
-        <a href="../index.html"><img class="ima" src="../img/5A.png" alt="Logo Nature Cosmetics"></a>
+        <a href="../index.html">
+            <picture>
+                <!-- Imagen para pantallas menores a 768px -->
+                <source media="(max-width: 767px)" srcset="../img/1A.png">
+                <!-- Imagen por defecto -->
+                <img class="ima" src="../img/5A.png" alt="Logo Nature Cosmetics">
+            </picture>
+        </a>
         <a href="nosotros.html"><button><strong>Nosotros</strong></button></a>
         <a href="contacto.html"><button><strong>Contacto</strong></button></a>
         <a href="tienda.html"><button><strong>Tienda</strong></button></a>

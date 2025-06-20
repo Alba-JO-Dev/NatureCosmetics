@@ -1,3 +1,4 @@
+/* ------------------ ESTILOS BASE (ya tenías) ------------------ */
 body {
     background-image: url("../img/PRIMERO.png");
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
@@ -8,8 +9,9 @@ body {
     background-attachment: fixed;
     color: #ffffff;
     transition: background-image 1s ease-in-out;
+    margin: 0;
+    padding: 0;
 }
-
 
 .titulo {
     font-size: xx-large;
@@ -17,11 +19,10 @@ body {
 
 .ima {
     height: 60px;
-    filter: drop-shadow(0 0 1rem rgb(0, 0, 0));
+    transition: all 120ms;
 }
 
 button {
-    position: relative;
     margin: 15px;
     transition: all 120ms;
     border: transparent;
@@ -30,53 +31,48 @@ button {
     width: auto;
     color: #f4f4f4;
     cursor: pointer;
+    transition: all 120ms;
 }
 
 #login {
-    transition: all 120ms;
     border: 2px solid #ffffff;
     border-radius: 7px;
     background-color: transparent;
     color: #ffffff;
-    height: auto;
     padding: 7.5px;
     box-shadow: 0px 0px 15px 5px rgba(255, 255, 255, 0.5);
 }
 
 #login:hover {
-    transition: all 120ms;
     background-color: #ffffff;
     color: #efb810;
     box-shadow: 0px 0px 15px 10px rgba(255, 255, 255, 0.5);
 }
 
 button:hover, .ima:hover {
-    transition: all 120ms;
     transform: scale(115%);
-    color: #ffffff;
-    cursor: pointer;
+    transition: all 120ms;
 }
 
 .img-buttons img {
     height: 50px;
     width: 50px;
     cursor: pointer;
+    transition: all 120ms;
+}
+
+#back, #next {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 #back {
-    transition: all 120ms;
-    position: absolute;
-    top: 50%;
     left: 2.5%;
-    transform: translate(-50%, -50%);
 }
 
 #next {
-    transition: all 120ms;
-    position: absolute;
-    top: 50%;
     left: 97.5%;
-    transform: translate(-50%, -50%);
 }
 
 header {
@@ -85,105 +81,18 @@ header {
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    width: 105%;
+    width: 100%;
     top: 0;
     left: 50%;
-    transform: translate(-50%, 0%);
+    transform: translateX(-50%);
     background-color: #efb810;
     gap: 20px;
-    box-shadow: 0 25px 25px rgba(239,184,16,255); /* Sombra para crear efecto de transición */
-    z-index: 10; /* Para asegurar que el header quede sobre el contenido */
-}
-
-.login {
-    padding: 20px 30px;
-    border-radius: 12px;
-    position: absolute;
-    background-color: rgba(239,184,16,0.65);
-    box-shadow: 0 0px 90px 20px rgba(239,184,16,1);
-    backdrop-filter: blur(12px);
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
-}
-
-label {
-    display: block;
-    margin-top: 10px;
-    color: #ffffff;
-    font-size: 14px;
-    left: 0;
-}
-
-input {
-    transition: all 120ms;
-    width: 100%;
+    box-shadow: 0 25px 25px rgba(239,184,16,255);
+    z-index: 10;
     padding: 10px;
-    margin-top: 5px;
-    border: 2px solid #ffffff;
-    border-radius: 4px;
-    font-size: 14px;
-    color: #333;
-    box-sizing: border-box;
-    background-color: transparent;
-    color: #ffffff;
 }
 
-input:hover {
-    transition: all 120ms;
-    background-color: #ffffff;
-    color: #efb810;
-}
-
-input:hover:focus{
-    transition: all 120ms;
-    border-color: #ffffff;
-    box-shadow: 0 0 20px rgb(255, 255, 255);
-}
-
-input::placeholder {
-    color: #ffffff;
-}
-
-input:focus {
-    transition: all 120ms;
-    outline: none;
-    border-color: #ffffff;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.892);
-}
-
-#loginSubmit {
-    border: 2px solid #ffffff;
-    height: auto;
-    padding: 8px;
-    border-radius: 5px;
-}
-
-#loginSubmit:hover {
-    background-color: #ffffff;
-    color: #efb810;
-}
-
-.password-container img {
-    cursor: pointer;
-    width: 28px;
-    height: 28px;
-    flex-shrink: 0; 
-    transition: opacity 0.2s;
-}
-
-.password-container img:hover {
-    opacity: 0.7;
-}
-
-
-.password-container {
-    display: flex;
-    align-items: center;
-    gap: 10px; 
-}
-
-.nosotros {
+.login, .nosotros, .cosmeticos {
     padding: 20px 30px;
     border-radius: 12px;
     position: absolute;
@@ -194,12 +103,80 @@ input:focus {
     top: 50%;
     left: 50%;
     z-index: 9;
+    width: 90%;
+    max-width: 500px;
+    box-sizing: border-box;
 }
 
-.nosotros button {
+.cosmeticos {
+    top: 155%;
+    margin-bottom: 35px;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    color: #ffffff;
+    font-size: 14px;
+    text-align: left;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 2px solid #ffffff;
+    border-radius: 4px;
+    font-size: 14px;
     background-color: transparent;
     color: #ffffff;
-    height: 60px;
+    box-sizing: border-box;
+    transition: all 120ms;
+}
+
+input:hover {
+    background-color: #ffffff;
+    color: #efb810;
+    transition: all 120ms;
+}
+
+input:focus {
+    outline: none;
+    border-color: #ffffff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.892);
+}
+
+input::placeholder {
+    color: #ffffff;
+}
+
+#loginSubmit {
+    border: 2px solid #ffffff;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+#loginSubmit:hover {
+    background-color: #ffffff;
+    color: #efb810;
+}
+
+.password-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.password-container img {
+    cursor: pointer;
+    width: 28px;
+    height: 28px;
+    transition: opacity 0.2s;
+}
+
+.password-container img:hover {
+    opacity: 0.7;
 }
 
 .nosotros img {
@@ -211,28 +188,129 @@ input:focus {
     border: solid 2px #ffffff;
     border-radius: 5px;
     width: 90%;
-    height: auto;
     padding: 10px;
     transition: all 140ms;
 }
 
 #add:hover {
+    transition: all 120ms;
     background-color: #ffffff;
     color: #efb810;
     box-shadow: 0px 0px 15px 10px rgba(255, 255, 255, 0.5);
-    transition: all 140ms;
 }
 
+/* ------------------ MEDIA QUERIES ------------------ */
 
-.cosmeticos {
-    padding: 20px 30px;
-    border-radius: 12px;
-    position: absolute;
-    background-color: rgba(239,184,16,0.65);
-    box-shadow: 0 0px 90px 20px rgba(239,184,16,1);
-    backdrop-filter: blur(12px);
-    transform: translate(-50%, -50%);
-    top: 130%;
-    left: 50%;
-    height: auto;
+/* Para pantallas menores a 768px (tablets y móviles) */
+@media (max-width: 768px) {
+
+    .cosmeticos {
+    top: 162.5%;
+}
+
+    .titulo {
+        font-size: large;
+    }
+
+    .ima {
+        height: 40px;
+        transition: all 120ms;
+    }
+
+    .ima:hover {
+        transition: all 120ms;
+    }
+
+    header {
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 10px;
+        gap: 5px;
+        height: auto;
+    }
+
+    header img,
+    .ima {
+        height: 30px;
+    }
+
+    header img{
+        width: auto;
+        height: 30px;
+    }    
+
+        header .titulo,
+    header button {
+        font-size: 14px;
+        padding: 5px;
+        height: auto;
+    }
+
+
+    .img-buttons img {
+        height: 40px;
+        width: 40px;
+    }
+
+    #back, #next {
+        top: 95%;
+        left: 10%;
+        transform: none;
+        position: fixed;
+    }
+
+    #next {
+        left: auto;
+        right: 10%;
+    }
+
+    .login, .nosotros, .cosmeticos {
+        width: 95%;
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .password-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    button {
+        margin: 5px;
+        height: auto;
+    }
+
+    #login {
+        padding: 5px;
+        font-size: 14px;
+    }
+
+    input {
+        font-size: 13px;
+    }
+
+    .nosotros img, .img-buttons img {
+        height: 35px;
+        width: 35px;
+    }
+}
+
+/* Extra: para pantallas muy pequeñas, como teléfonos de 360px */
+@media (max-width: 480px) {
+    .titulo {
+        font-size: medium;
+    }
+
+    button {
+        height: 50px;
+    }
+
+    input {
+        padding: 8px;
+    }
+
+    #back, #next {
+        top: auto;
+        bottom: 10px;
+    }
 }

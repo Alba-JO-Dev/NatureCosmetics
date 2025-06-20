@@ -1,7 +1,7 @@
 [
     {
         "nombre": "Champú Natural Revitalizante",
-        "precio": 25000,
+        "precio": 28000,
         "descripcion": "Champú suave con ingredientes naturales como romero y aloe vera. Fortalece el cabello y estimula el cuero cabelludo.",
         "imagen": {
             "archivo": "champu_natural.png"
@@ -16,8 +16,8 @@
         }
     },
     {
-        "nombre": "Tratamiento Capilar Reparadora",
-        "precio": 20000,
+        "nombre": "Tratamiento de Cremiento y Regeneración Capilar",
+        "precio": 25000,
         "descripcion": "Tratamiento intensivo con aceite de argán y karité para reparar el cabello seco o dañado.",
         "imagen": {
             "archivo": "mascarilla_capilar.png"
