@@ -7,33 +7,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" rel="stylesheet" href="style.css">
     <title>Nature Cosmetics</title>
-    <style>
+<style>
+    #background-layer {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        z-index: -1;
+        opacity: 0; /* Comienza invisible */
+        transition: opacity 0.6s ease-in-out;
+    }
 
-        #background-layer {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            background-attachment: fixed;
-            z-index: -1;
-            transition: opacity 0.6s ease-in-out;
-            opacity: 1;
-        }
+    #background-layer.visible {
+        opacity: 1;
+    }
 
-        .fade-out {
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-        }
+    .fade-out {
+        opacity: 0 !important;
+    }
 
-        body {
-            opacity: 1;
-            transition: opacity 0.5s ease-in-out;
-        }
-    </style>
+    body {
+        opacity: 0; /* Comienza invisible */
+        transition: opacity 0.5s ease-in-out;
+    }
+
+    body.fade-in {
+        opacity: 1;
+    }
+</style>
 </head>
 <body>
     <div id="background-layer"></div>
@@ -57,116 +63,133 @@
         <a id="next"><img src="img/5.png" alt="Siguiente"></a>
     </div>
 
-    <script>
-
-        const togglePasswordImages = document.querySelectorAll('.toggle-password');
-        togglePasswordImages.forEach(image => {
-            image.addEventListener('click', () => {
-                const targetId = image.getAttribute('data-target');
-                const passwordInput = document.getElementById(targetId);
-                if (passwordInput) {
-                    if (passwordInput.type === 'password') {
-                        passwordInput.type = 'text';
-                        image.src = 'img/hide-password.png';
-                        image.alt = 'Ocultar contraseña';
-                    } else {
-                        passwordInput.type = 'password';
-                        image.src = 'img/show-password.png';
-                        image.alt = 'Mostrar contraseña';
-                    }
+<script>
+    // Mostrar/Ocultar contraseña
+    const togglePasswordImages = document.querySelectorAll('.toggle-password');
+    togglePasswordImages.forEach(image => {
+        image.addEventListener('click', () => {
+            const targetId = image.getAttribute('data-target');
+            const passwordInput = document.getElementById(targetId);
+            if (passwordInput) {
+                if (passwordInput.type === 'password') {
+                    passwordInput.type = 'text';
+                    image.src = 'img/hide-password.png';
+                    image.alt = 'Ocultar contraseña';
                 } else {
-                    console.error(`Elemento con id "${targetId}" no encontrado.`);
+                    passwordInput.type = 'password';
+                    image.src = 'img/show-password.png';
+                    image.alt = 'Mostrar contraseña';
                 }
-            });
+            } else {
+                console.error(`Elemento con id "${targetId}" no encontrado.`);
+            }
+        });
+    });
+
+    // Fondos aleatorios
+    const images = [
+        'img/PRIMERO.png',
+        'img/QUINTO.jpg',
+        'img/SEGUNDO.png',
+        'img/SEXTO.jpg',
+        'img/TERCERO.png',
+        'img/More/1.png',
+        'img/More/2.png',
+        'img/More/3.png',
+        'img/More/4.png',
+        'img/More/5.png',
+        'img/More/6.png',
+        'img/More/7.png',
+        'img/More/8.png',
+        'img/More/9.png'
+    ];
+
+    let currentIndex = 0;
+    let intervalId;
+    let isBackgroundActive = true;
+
+    function changeBackground() {
+        const bgLayer = document.getElementById('background-layer');
+        if (!bgLayer) return;
+
+        bgLayer.style.opacity = '0';
+
+        setTimeout(() => {
+            const imageUrl = images[currentIndex];
+            bgLayer.style.backgroundImage = `url(${imageUrl})`;
+            bgLayer.style.opacity = '1';
+        }, 500);
+    }
+
+    function nextImage() {
+        if (!isBackgroundActive) return;
+        currentIndex = (currentIndex + 1) % images.length;
+        changeBackground();
+    }
+
+    function prevImage() {
+        if (!isBackgroundActive) return;
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        changeBackground();
+    }
+
+    function startInterval() {
+        clearInterval(intervalId);
+        intervalId = setInterval(nextImage, 5000);
+    }
+
+    function stopBackgroundChange() {
+        clearInterval(intervalId);
+        document.body.style.backgroundImage = 'img/PRIMERO.png';
+        document.body.style.backgroundColor = '#f3f3f3';
+        isBackgroundActive = false;
+    }
+
+    function loginBackground() {
+        stopBackgroundChange();
+    }
+
+    function nosotrosBackground() {
+        stopBackgroundChange();
+    }
+
+    function showSection(sectionId) {
+        const sections = ['loginID'];
+        sections.forEach(id => {
+            document.getElementById(id).style.display = id === sectionId ? 'block' : 'none';
         });
 
-        const images = [
-            'img/PRIMERO.png',
-            'img/QUINTO.jpg',
-            'img/SEGUNDO.png',
-            'img/SEXTO.jpg',
-            'img/TERCERO.png',
-            'img/More/1.png',
-            'img/More/2.png',
-            'img/More/3.png',
-            'img/More/4.png',
-            'img/More/5.png',
-            'img/More/6.png',
-            'img/More/7.png',
-            'img/More/8.png',
-            'img/More/9.png'
-        ];
-
-        let currentIndex = 0;
-        let intervalId;
-        let isBackgroundActive = true;
-
-        function changeBackground() {
-            const bgLayer = document.getElementById('background-layer');
-            if (!bgLayer) return;
-
-            bgLayer.style.opacity = '0';
-
-            setTimeout(() => {
-                const imageUrl = images[currentIndex];
-                bgLayer.style.backgroundImage = `url(${imageUrl})`;
-                bgLayer.style.opacity = '1';
-            }, 500);
-        }
-
-        function nextImage() {
-            if (!isBackgroundActive) return;
-            currentIndex = (currentIndex + 1) % images.length;
+        if (sectionId === 'homeID') {
+            currentIndex = 0;
+            isBackgroundActive = true;
             changeBackground();
+            startInterval();
+        } else if (sectionId === 'loginID') {
+            loginBackground();
         }
+    }
 
-        function prevImage() {
-            if (!isBackgroundActive) return;
-            currentIndex = (currentIndex - 1 + images.length) % images.length;
-            changeBackground();
-        }
+    document.getElementById('next')?.addEventListener('click', nextImage);
+    document.getElementById('back')?.addEventListener('click', prevImage);
 
-        function startInterval() {
-            clearInterval(intervalId);
-            intervalId = setInterval(nextImage, 5000);
-        }
+    // TRANSICIÓN DE ENTRADA
+    window.addEventListener("DOMContentLoaded", function() {
+        document.body.classList.add("fade-in");
+        document.getElementById("background-layer")?.classList.add("visible");
+    });
 
-        function stopBackgroundChange() {
-            clearInterval(intervalId);
-            document.body.style.backgroundImage = 'img/PRIMERO.png';
-            document.body.style.backgroundColor = '#f3f3f3';
-            isBackgroundActive = false;
-        }
+    // TRANSICIÓN DE SALIDA (ejemplo de función para usar antes de redireccionar)
+    function fadeOutPage(callback) {
+        document.body.classList.remove("fade-in");
+        document.getElementById("background-layer")?.classList.remove("visible");
+        setTimeout(() => {
+            if (typeof callback === "function") callback();
+        }, 500); // Espera la duración de la transición
+    }
 
-        function loginBackground() {
-            stopBackgroundChange();
-        }
+    changeBackground();
+    startInterval();
+</script>
 
-        function nosotrosBackground() {
-            stopBackgroundChange();
-        }
-
-        function showSection(sectionId) {
-            const sections = ['loginID'];
-            sections.forEach(id => {
-                document.getElementById(id).style.display = id === sectionId ? 'block' : 'none';
-            });
-
-            if (sectionId === 'homeID') {
-                currentIndex = 0;
-                isBackgroundActive = true;
-                changeBackground();
-                startInterval();
-            } else if (sectionId === 'loginID') {
-                loginBackground();
-            }
-        }
-
-        document.getElementById('next')?.addEventListener('click', nextImage);
-        document.getElementById('back')?.addEventListener('click', prevImage);
-
-        changeBackground();
-        startInterval();
-    </script>
 </body>
 </html>
